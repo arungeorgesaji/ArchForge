@@ -47,6 +47,10 @@ done
 # Allows the users of group wheel to execute any command
 sudo sed -i '/^# %wheel/s/^# //' /etc/sudoers
 
+if [ "$rootpw" = "yes" ]; then 
+  echo "Defaults rootpw" >> /etc/sudoers
+fi
+
 bootctl install
 
 # Write a boot entry

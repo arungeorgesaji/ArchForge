@@ -77,8 +77,9 @@ uses_ssd="yes"
 #Note:This is for 32bit support for 64bit systems
 enable_32bit_support="yes"
 
-#A yes or no variable which checks if the users wants to be prompted their password everyti#me they use a command with sudo(use lowecase yes/no)'
-#Its recommended to turn this on as this increases the securiy
+#A yes or no variable which checks if the user wants to use their root password instead of#their user password everytime password is needed for like installing stuff or changing 
+#something
+#It is recommended to turn this on to increase security
 rootpw="yes"
 
 
