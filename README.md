@@ -30,23 +30,27 @@ ArchForge simplifies the installation of Arch Linux by providing a set of script
 
 ## Usage
 
-1. Clone the repository:
+1. Perform a partial update and also install git(yes partial updates are bad but in this case the iso probably doesn't have the space required for full update and also because its probably not needed and you are fine with the partial update):
+
+       sudo pacman -Sy git
+   
+2. Clone the repository:
 
        git clone https://github.com/arungeorgesaji/ArchForge.git
        
-2. Move everything to the home directory:
+3. Move everything to the home directory:
 
        mv ArchForge/* .
        
-3. Edit the setup_variables.sh according to your requirements this setup_variables is made to lessen the load on you for scripting the my_config_installer.sh and is what make ArchForge is a good tool according to me with your favourite text editor like i use neovim(References folder has files which might help with settings up setup_variables.sh):
+4. Edit the setup_variables.sh according to your requirements this setup_variables is made to lessen the load on you for scripting the my_config_installer.sh and is what make ArchForge is a good tool according to me with your favourite text editor like i use neovim(References folder has files which might help with settings up setup_variables.sh):
 
        nvim setup_variables.sh
 
-4. I mean you should have done this already and made your own fork already with your own my_config_installer.sh instead of using mine here just use you favourite text editor like previously mentioned i use neovim:
+5. I mean you should have done this already and made your own fork already with your own my_config_installer.sh instead of using mine here just use you favourite text editor like previously mentioned i use neovim:
 
        nvim my_config_installer.sh
        
-5. Finally whenever you feel ready you can run the script and its run hopefully getting you a working system in the end:
+6. Finally whenever you feel ready you can run the script and its run hopefully getting you a working system in the end:
 
        ./arch_installer.sh
        
