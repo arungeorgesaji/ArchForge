@@ -8,7 +8,7 @@ cd home/arun
 sudo pacman -Syu
 
 #Install all the packages I require from pacman using pacman
-sudo pacman -S wget neofetch openssh git nano vim neovim rofi kitty ly godot blender gimp inkscape krita obs-studio lf xorg-server xorg-xinit xorg-apps plasma-desktop pavucontrol blueman shotcut uget qbittorrent feh dunst pamixer pulseaudio upower scrot xclip ardour tldr cups python lf kitty libvirt virt-manager qemu-base vlc unzip tar
+sudo pacman -S wget neofetch openssh git nano vim neovim rofi kitty ly godot blender gimp inkscape krita obs-studio lf xorg-server xorg-xinit xorg-apps plasma-desktop pavucontrol blueman shotcut uget qbittorrent feh dunst pamixer pulseaudio upower scrot xclip ardour tldr cups python lf kitty libvirt virt-manager qemu-base vlc unzip tar vivaldi
 
 #Install yay so that it can assist in AUR packages installations 
 git clone https://aur.archlinux.org/yay.git
@@ -17,7 +17,7 @@ makepkg -si
 cd ..
 
 #Install all the packages I require from the AUR using yay
-yay -S linux-wifi-hotspot yaycache autojump picom-git python39 python310 trash-cli wireshark-git ms-365-electron-bin conda epson-printer-utility fastfetch-git thorium-browser-bin postman-bin 
+yay -S linux-wifi-hotspot yaycache autojump picom-git python39 python310 trash-cli wireshark-git ms-365-electron-bin conda epson-printer-utility fastfetch-git postman-bin 
 
 #Install pip for pyhon versions installed from AUR
 python3.9 -m ensurepip --upgrade
