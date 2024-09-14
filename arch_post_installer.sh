@@ -113,31 +113,31 @@ sudo pacman -S linux-headers
 # Install NVIDIA drivers if the user uses an NVIDIA GPU
 if [ "$uses_nvidia_gpu" = "yes" ]; then 
 
-    # Install the drivers
-    sudo pacman -S nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
+    # install the drivers
+    sudo pacman -s nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
 
-    # Add the drivers to initramfs so it loads on boot even before kernel starts
-    sed -i "/^MODULES=/ s/)/ nvidia nvidia_modeset nvidia_uvm nvidia_drm)/" /etc/mkinitcpio.conf
+    # add the drivers to initramfs so it loads on boot even before kernel starts
+    sed -i "/^modules=/ s/)/ nvidia nvidia_modeset nvidia_uvm nvidia_drm)/" /etc/mkinitcpio.conf
 
-    # DRM is something important for the GPU to work properly this line enables it
+    # drm is something important for the gpu to work properly this line enables it
     sed -i '/^options/ s/$/ nvidia-drm.modeset=1/' /etc/loader/entries/arch.conf
 
-    # Writes nvidia.hook which updates mkinitpcio when a new nvidia driver is installed, driver is removed or it is updated
-    # Basically it allows you the system to update the information regarding the NVIDIA drivers when it's installed, updated, or removed.
+    # writes nvidia.hook which updates mkinitpcio when a new nvidia driver is installed, driver is removed or it is updated
+    # basically it allows you the system to update the information regarding the nvidia drivers when it's installed, updated, or removed.
     sudo mkdir -p /etc/pacman.d/hooks
 	sudo touch /etc/pacman.d/hooks/nvidia.hook
-    sudo tee /etc/pacman.d/hooks/nvidia.hook <<EOF
-    [Trigger]
-    Operation=Install
-    Operation=Upgrade
-    Operation=Remove
-    Type=Package
-    Target=nvidia
+    sudo tee /etc/pacman.d/hooks/nvidia.hook <<eof
+    [trigger]
+    operation=install
+    operation=upgrade
+    operation=remove
+    type=package
+    target=nvidia
 
-    [Action]
-    Depends=mkinitcpio
-    When=PostTransaction
-    Exec=/usr/bin/mkinitcpio -P
-EOF
+    [action]
+    depends=mkinitcpio
+    when=posttransaction
+    exec=/usr/bin/mkinitcpio -p
+eof
 fi
 

@@ -17,7 +17,7 @@ makepkg -si
 cd ..
 
 #Install all the packages I require from the AUR using yay
-yay -S linux-wifi-hotspot yaycache autojump picom-git python39 python310 trash-cli wireshark-git ms-365-electron-bin conda epson-printer-utility fastfetch-git postman-bin 
+yay -S linux-wifi-hotspot yaycache autojump picom-git python39 python310 trash-cli wireshark-git ms-365-electron-bin conda epson-printer-utility fastfetch-git postman-bin ani-cli 
 
 #Install pip for pyhon versions installed from AUR
 python3.9 -m ensurepip --upgrade
