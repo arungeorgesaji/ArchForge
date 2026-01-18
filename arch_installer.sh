@@ -18,7 +18,7 @@ sgdisk --new=1:2048:+1G --typecode=1:ef00 --change-name=1:"boot" \
        --new=4:0:0 --typecode=4:8302 --change-name=4:"home" "$drive_name"
 
 # Convert partitions into their right types and also create swap and enable it
-mkfs.fat -f32 "$boot"
+mkfs.fat -F32 "$boot"
 mkswap "$swap"
 swapon "$swap"
 mkfs.ext4 "$root"

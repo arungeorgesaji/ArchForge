@@ -114,7 +114,7 @@ sudo pacman -S linux-headers
 if [ "$uses_nvidia_gpu" = "yes" ]; then 
 
     # install the drivers
-    sudo pacman -s nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
+    sudo pacman -S nvidia-dkms libglvnd nvidia-utils opencl-nvidia lib32-libglvnd lib32-nvidia-utils lib32-opencl-nvidia nvidia-settings
 
     # add the drivers to initramfs so it loads on boot even before kernel starts
     sed -i "/^modules=/ s/)/ nvidia nvidia_modeset nvidia_uvm nvidia_drm)/" /etc/mkinitcpio.conf
@@ -137,7 +137,7 @@ if [ "$uses_nvidia_gpu" = "yes" ]; then
     [action]
     depends=mkinitcpio
     when=posttransaction
-    exec=/usr/bin/mkinitcpio -p
+    exec=/usr/bin/mkinitcpio -P
 eof
 fi
 
