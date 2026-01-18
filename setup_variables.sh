@@ -5,22 +5,22 @@
 
 #Full path to the drive should be included like /dev/nvme0n1
 #lsblk command might help you find the right drive
-drive_name="/dev/sda"    
+drive_name="/dev/nvme0n1"    
 
 #Partition suffix means like for some drives I have seen like nvme0n1 partitions are nvme0#n1p1,nvme0n1p2,nvme0n1p3 and nvme0n1p4 here my partition suffix is p yours might not have#something like this and might go with just the number in that case leave this blank 
-partition_suffix=""
+partition_suffix="p"
 
 #Storage reserved for swap directly in GiB
 #Swap is like used when your device is low on ram and exchanges stuff to the drive
 #Its recommended to have swap even if you have a lot of ram
 #The value should be just a number such as 16
-swap_storage_space=""
+swap_storage_space="16"
 
 #Storage reserved for root directly in GiB
 #Root is where all the packages and all the basic stuff to run the os is installed to
 #I like to have a bigger root as i see myself using it a lot atleast 25GiB is recommended
 #The value should just be a number such as 64
-root_storage_space=""
+root_storage_space="128"
 
 #Network information wont be used if internet is accessible so if ethernet is connected or #you have already configured Internet,then these information will be ignored
 
@@ -34,7 +34,7 @@ network_interface=""
 network_password=""
 
 #Hostname
-hostname=""
+hostname="ArchLinux"
 
 #Host password
 host_password=""
@@ -67,7 +67,7 @@ network_management_tool="NetworkManager"
 bluetooth_management_tool="Blueman"
 
 #A yes or no variable which defines if the user uses an nvidia gpu
-uses_nvidia_gpu="no"
+uses_nvidia_gpu="yes"
 
 #A yes or no variable which defines if the user uses an ssd or not(use lowercase yes/no)
 uses_ssd="yes"
