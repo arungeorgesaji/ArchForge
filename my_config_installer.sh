@@ -8,7 +8,7 @@ cd home/arun
 sudo pacman -Syu
 
 #Install all the packages I require from pacman using pacman
-sudo pacman -S wget neofetch openssh git nano vim neovim rofi kitty ly godot blender gimp inkscape krita obs-studio lf xorg-server xorg-xinit xorg-apps plasma-desktop pavucontrol blueman shotcut uget qbittorrent feh dunst pamixer pulseaudio upower scrot xclip ardour tldr cups python lf kitty libvirt virt-manager qemu-base vlc unzip tar vivaldi firefox steam openscad solanum autorandr 
+sudo pacman -S wget openssh git nano vim neovim rofi kitty ly godot blender gimp inkscape krita obs-studio lf xorg-server xorg-xinit xorg-apps plasma-desktop pavucontrol shotcut uget qbittorrent feh dunst pamixer pulseaudio upower scrot xclip ardour tldr cups python lf kitty libvirt virt-manager qemu-base vlc unzip tar vivaldi firefox steam openscad solanum autorandr 
 
 #Install yay so that it can assist in AUR packages installations 
 git clone https://aur.archlinux.org/yay.git
@@ -22,8 +22,6 @@ yay -S linux-wifi-hotspot yaycache autojump picom-git python39 python310 trash-c
 #Install pip for pyhon versions installed from AUR
 python3.9 -m ensurepip --upgrade
 python3.9 -m pip install pip --upgrade
-python3.10 -m ensurepip --upgrade
-python3.10 -m pip install pip --upgrade
 
 #Install all the packages/software I require from github(not available or working properly#through pacman or AUR)
 git clone https://github.com/P3rf/rofi-network-manager.git
@@ -55,13 +53,12 @@ sudo mv dotfiles/wallpapers Pictures
 sudo mv dotfiles/rofi/rofi-themes/rounded-red-dark.rasi ../../usr/share/rofi/themes
 sudo mv dotfiles/rofi/config.rasi .config/rofi  
 sudo mv dotfiles/fastfetch/config.jsonc .config/fastfetch
-sudo mv dotfiles/nvim/* .config/nvim 
+sudo mv dotfiles/nvim/ .config/nvim 
 
 #Enable the services I want to run of startup
-sudo systemctl enable ly.service
+sudo systemctl enable ly@tty2.service
 sudo systemctl enable libvirtd.service 
 sudo systemctl enable bluetooth.service
-sudo virsh net-autostart default
 
 #Edit the other settings i need
 sudo usermod -a -G libvirt arun
