@@ -127,17 +127,17 @@ if [ "$uses_nvidia_gpu" = "yes" ]; then
     sudo mkdir -p /etc/pacman.d/hooks
 	sudo touch /etc/pacman.d/hooks/nvidia.hook
     sudo tee /etc/pacman.d/hooks/nvidia.hook <<eof
-    [trigger]
-    operation=install
-    operation=upgrade
-    operation=remove
-    type=package
-    target=nvidia
+    [Trigger]
+    Operation=Install
+    Operation=Upgrade
+    Operation=Remove
+    Type=Package
+    Target=nvidia
 
-    [action]
-    depends=mkinitcpio
-    when=posttransaction
-    exec=/usr/bin/mkinitcpio -P
+    [Action]
+    Depends=mkinitcpio
+    When=PostTransaction
+    Exec=/usr/bin/mkinitcpio -P
 eof
 fi
 
