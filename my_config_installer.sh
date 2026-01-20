@@ -8,7 +8,8 @@ cd home/arun
 sudo pacman -Syu
 
 #Install all the packages I require from pacman using pacman
-sudo pacman -S wget openssh git nano vim neovim rofi kitty ly godot blender gimp inkscape krita obs-studio lf xorg-server xorg-xinit xorg-apps plasma-desktop pavucontrol shotcut uget qbittorrent feh dunst pamixer pulseaudio upower scrot xclip ardour tldr cups python lf kitty libvirt virt-manager qemu-base vlc unzip tar vivaldi firefox steam openscad solanum autorandr 
+sudo pacman -S wget openssh git nano vim neovim rofi kitty ly godot blender gimp inkscape krita obs-studio lf xorg-server xorg-xinit xorg-apps plasma-desktop pavucontrol shotcut uget qbittorrent feh dunst pamixer upower scrot xclip ardour tldr cups python lf kitty libvirt virt-manager qemu-base vlc unzip tar vivaldi firefox steam openscad solanum autorandr pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber bluez-plugins nvidia-prime linux-headers 
+
 
 #Install yay so that it can assist in AUR packages installations 
 git clone https://aur.archlinux.org/yay.git
@@ -50,7 +51,7 @@ sudo mv dotfiles/dunst/dunstrc .config/dunst
 sudo mv dotfiles/kitty/kitty.conf .config/kitty
 sudo mv dotfiles/picom/picom.conf .config/picom
 sudo mv dotfiles/wallpapers Pictures 
-sudo mv dotfiles/rofi/rofi-themes/rounded-red-dark.rasi ../../usr/share/rofi/themes
+sudo mv dotfiles/rofi/rofi-themes/* ../../usr/share/rofi/themes
 sudo mv dotfiles/rofi/config.rasi .config/rofi  
 sudo mv dotfiles/fastfetch/config.jsonc .config/fastfetch
 sudo mv dotfiles/nvim/ .config/nvim 
