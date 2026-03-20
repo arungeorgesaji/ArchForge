@@ -8,8 +8,7 @@ cd home/arun
 sudo pacman -Syu
 
 #Install all the packages I require from pacman using pacman
-sudo pacman -S wget openssh git nano vim neovim rofi kitty ly godot blender gimp inkscape krita obs-studio lf xorg-server xorg-xinit xorg-apps plasma-desktop pavucontrol shotcut uget qbittorrent feh dunst pamixer upower scrot xclip ardour tldr cups python lf kitty libvirt virt-manager qemu-base vlc unzip tar vivaldi firefox steam openscad solanum autorandr pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber bluez-plugins nvidia-prime linux-headers 
-
+sudo pacman -S wget openssh git nano vim neovim rofi kitty ly godot blender gimp inkscape krita obs-studio lf xorg-server xorg-xinit xorg-apps plasma-desktop pavucontrol shotcut uget qbittorrent feh dunst pamixer upower scrot xclip ardour tldr cups python lf kitty libvirt virt-manager qemu-base vlc unzip tar vivaldi firefox steam openscad solanum autorandr pipewire pipewire-pulse pipewire-alsa pipewire-jack wireplumber bluez-plugins nvidia-prime linux-headers xdg-desktop-portal xdg-desktop-portal-gtk dnsmasq 
 
 #Install yay so that it can assist in AUR packages installations 
 git clone https://aur.archlinux.org/yay.git
@@ -18,7 +17,7 @@ makepkg -si
 cd ..
 
 #Install all the packages I require from the AUR using yay
-yay -S linux-wifi-hotspot yaycache autojump picom-git python39 python310 trash-cli wireshark-git ms-365-electron-bin conda fastfetch-git postman-bin ani-cli debtap bambustudio-bin
+yay -S linux-wifi-hotspot yaycache autojump picom-git python39 python310 trash-cli wireshark-git ms-365-electron-bin conda fastfetch-git postman-bin ani-cli debtap bambustudio-bin spotify
 
 #Install pip for pyhon versions installed from AUR
 python3.9 -m ensurepip --upgrade
